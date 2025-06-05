@@ -1,0 +1,31 @@
+body {
+  font-family: "Arial", sans-serif;
+  background: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+#app {
+  max-width: 600px;
+  margin: auto;
+}
+
+.menu button, #back-btn {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu button:hover, #back-btn:hover {
+  background: #45a049;
+}
+
+#game-area {
+  margin-top: 20px;
+}

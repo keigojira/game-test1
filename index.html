@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniGame Galaxy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>🎮 MiniGame Galaxy</h1>
+
+    <div class="menu">
+      <button onclick="showGame('dice')">🎲 サイコロ</button>
+      <button onclick="showGame('rps')">✊ じゃんけん</button>
+      <button onclick="showGame('target')">🎯 的当て</button>
+    </div>
+
+    <div id="game-area"></div>
+    <button id="back-btn" onclick="showMenu()" style="display:none;">⬅️ 戻る</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

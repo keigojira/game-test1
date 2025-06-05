@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>暇つぶしミニゲーム</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 2em;
+    }
+    h1 {
+      margin-bottom: 1em;
+    }
+    button {
+      margin: 0.5em;
+      padding: 1em 2em;
+      font-size: 1em;
+    }
+    #result {
+      margin-top: 1em;
+      font-size: 1.5em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 暇つぶしミニゲーム 🎮</h1>
+
+  <div>
+    <button onclick="rollDice()">🎲 サイコロを振る</button>
+    <button onclick="playJanken()">✊✌🖐 じゃんけん</button>
+    <button onclick="drawOmikuji()">🎯 おみくじ</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function rollDice() {
+      const num = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("result").textContent = `🎲 出た目：${num}`;
+    }
+
+    function playJanken() {
+      const hands = ["グー", "チョキ", "パー"];
+      const user = hands[Math.floor(Math.random() * 3)];
+      const cpu = hands[Math.floor(Math.random() * 3)];
+
+      let result = "";
+      if (user === cpu) result = "あいこ！";
+      else if (
+        (user === "グー" && cpu === "チョキ") ||
+        (user === "チョキ" && cpu === "パー") ||
+        (user === "パー" && cpu === "グー")
+      ) {
+        result = "あなたの勝ち！";
+      } else {
+        result = "あなたの負け...";
+      }
+
+      document.getElementById("result").textContent =
+        `あなた：${user} / コンピュータ：${cpu} → ${result}`;
+    }
+
+    function drawOmikuji() {
+      const fortunes = ["大吉", "中吉", "小吉", "末吉", "凶", "大凶"];
+      const result = fortunes[Math.floor(Math.random() * fortunes.length)];
+      document.getElementById("result").textContent = `🧧 おみくじの結果：${result}`;
+    }
+  </script>
+</body>
+</html>
